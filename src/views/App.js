@@ -1,15 +1,13 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import SelectFile from "./Home/SelectFile";
-import ProcessFile from "./Home/ProcessFile";
+import IFCFilter from "./IFCFilter/IFCFilter";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <SelectFile />
-        <ProcessFile />
+        <IFCFilter />
       </header>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.scss";
+import "./IFCFilter.scss";
 import * as XLSX from "xlsx";
 
 class SelectFile extends React.Component {
@@ -25,13 +25,15 @@ class SelectFile extends React.Component {
         this.setState({
           mappingContent: data,
         });
-        console.log(data);
+        // console.log(data);
+        this.props.copyMappingData(data);
       };
       reader.readAsBinaryString(file);
     } else {
       this.setState({
         mappingContent: "",
       });
+      this.props.copyMappingData("");
     }
   };
 
@@ -45,13 +47,15 @@ class SelectFile extends React.Component {
         this.setState({
           ifcContent: data,
         });
-        console.log(data);
+        // console.log(data);
+        this.props.copyIFCData(data);
       };
       reader.readAsText(e.target.files[0]);
     } else {
       this.setState({
         ifcContent: "",
       });
+      this.props.copyIFCData("");
     }
   };
 

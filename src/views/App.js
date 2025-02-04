@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.scss";
 import SelectFile from "./Home/SelectFile";
+import ProcessFile from "./Home/ProcessFile";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <SelectFile />
+        <ProcessFile />
       </header>
     </div>
   );

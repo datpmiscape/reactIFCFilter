@@ -13,18 +13,18 @@ class ProcessFile extends React.Component {
     return (
       <div>
         <div>hello process</div>
-        {/* {mappingList &&
+        {mappingList &&
           mappingList.length > 0 &&
-          mappingList.map((item, index) => {
+          ifcList &&
+          ifcList.length > 0 &&
+          mappingList.map((item1, index1) => {
             return (
-              <div>
-                <label>
-                  <input type="checkbox" id="cb1" value={"cat1"} />
-                  cat1
-                </label>
+              <div key={item1.id}>
+                <input type="checkbox" id={item1.id} value={item1.revitCat} />
+                {item1.revitCat}
               </div>
             );
-          })} */}
+          })}
       </div>
     );
   }

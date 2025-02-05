@@ -6,19 +6,23 @@ import ProcessFile from "./ProcessFile";
 class IFCFilter extends React.Component {
   //State
   state = {
-    mappingContent: "",
-    ifcContent: "",
+    mappingList: [],
+    ifcHeader: "",
+    ifcFooter: "",
+    ifcList: [],
   };
 
   //Event
-  copyMappingData = (mappingContent) => {
+  copyMappingList = (mappingList) => {
     this.setState({
-      mappingContent: mappingContent,
+      mappingList: mappingList,
     });
   };
-  copyIFCData = (ifcContent) => {
+  copyIFCData = (ifcHeader, ifcFooter, ifcList) => {
     this.setState({
-      ifcContent: ifcContent,
+      ifcHeader: ifcHeader,
+      ifcFooter: ifcFooter,
+      ifcList: ifcList,
     });
   };
 
@@ -27,12 +31,12 @@ class IFCFilter extends React.Component {
     return (
       <div>
         <SelectFile
-          copyMappingData={this.copyMappingData}
+          copyMappingList={this.copyMappingList}
           copyIFCData={this.copyIFCData}
         />
         <ProcessFile
-          mappingContent={this.state.mappingContent}
-          ifcContent={this.state.ifcContent}
+          mappingList={this.state.mappingList}
+          ifcList={this.state.ifcList}
         />
       </div>
     );
